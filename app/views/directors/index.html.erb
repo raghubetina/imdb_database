@@ -82,19 +82,19 @@
   <div class="col-md-12">
     <table class="table table-striped table-hover">
       <tr>
+        <th>Image</th>
         <th>Name</th>
         <th>Dob</th>
         <th>Bio</th>
-        <th>Image</th>
         <th>Actions</th>
       </tr>
 
       <% @directors.each do |director| %>
       <tr>
+        <td><img src='<%= director.image %>' class='img-responsive'></td>
         <td><%= director.name %></td>
         <td><%= director.dob %></td>
-        <td><%= director.bio %></td>
-        <td><img src='<%= director.image %>' class='img-responsive'></td>
+        <td><%= truncate director.bio, length: 500 %></td>
         <td>
           <a href="/directors/<%= director.id %>" class="btn btn-primary">Show</a>
           <a href="/directors/<%= director.id %>/edit" class="btn btn-warning">Edit</a>

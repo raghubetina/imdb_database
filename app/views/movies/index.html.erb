@@ -116,22 +116,22 @@
   <div class="col-md-12">
     <table class="table table-striped table-hover">
       <tr>
+        <th>Image</th>
         <th>Title</th>
         <th>Year</th>
         <th>Duration</th>
         <th>Description</th>
-        <th>Image</th>
         <th>Director</th>
         <th>Actions</th>
       </tr>
 
       <% @movies.each do |movie| %>
       <tr>
+        <td><img src="<%= movie.image %>" class="img-responsive"></td>
         <td><%= movie.title %></td>
         <td><%= movie.year %></td>
         <td><%= movie.duration %></td>
         <td><%= movie.description %></td>
-        <td><%= movie.image %></td>
         <td>
           <% if movie.director.present? %>
             <a href="/directors/<%= movie.director.id %>">

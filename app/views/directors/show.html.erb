@@ -15,7 +15,7 @@
       <dd><%= @director.bio %></dd>
 
       <dt>Image</dt>
-      <dd><img src="<%= @director.image %>" class="img-responsive"></dd>
+      <dd><%= @director.image %></dd>
 
     </dl>
 
@@ -62,7 +62,7 @@
       <% end %>
 
       <li class="list-group-item">
-        <form action="/create_movie" method="post" enctype="multipart/form-data">
+        <form action="/create_movie" method="post">
       <!-- Hidden input for authenticity token to protect from forgery -->
       <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
 
@@ -108,7 +108,7 @@
           Image
         </label>
 
-        <input type="file" id="image" name="image" class="form-control">
+        <input type="text" id="image" name="image" placeholder="Image" class="form-control" value="">
       </div>
 
       <!-- Label and input for director_id -->
